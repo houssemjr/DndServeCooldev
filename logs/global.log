@@ -1,0 +1,52 @@
+2023-02-15 00:14:32.586  WARN 2968 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=18m27s743ms376µs700ns).
+2023-02-15 01:44:58.127  WARN 2968 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52m24s963ms842µs200ns).
+2023-02-15 13:54:25.398  INFO 14056 --- [main] com.example.pidev.PiDevApplication       : Starting PiDevApplication using Java 1.8.0_121 on DESKTOP-P93RHII with PID 14056 (C:\Users\khalil\IdeaProjects\PiDev\target\classes started by khalil in C:\Users\khalil\IdeaProjects\PiDev)
+2023-02-15 13:54:25.401  INFO 14056 --- [main] com.example.pidev.PiDevApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-02-15 13:54:26.061  INFO 14056 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-15 13:54:26.123  INFO 14056 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 3 JPA repository interfaces.
+2023-02-15 13:54:26.669  INFO 14056 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2023-02-15 13:54:26.677  INFO 14056 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-15 13:54:26.678  INFO 14056 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-02-15 13:54:26.823  INFO 14056 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/Forum]  : Initializing Spring embedded WebApplicationContext
+2023-02-15 13:54:26.823  INFO 14056 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1359 ms
+2023-02-15 13:54:27.005  INFO 14056 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-15 13:54:27.045  INFO 14056 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-02-15 13:54:27.164  INFO 14056 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-15 13:54:27.332  INFO 14056 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-15 13:54:27.570  INFO 14056 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-02-15 13:54:27.579  INFO 14056 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-02-15 13:54:28.352  INFO 14056 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-15 13:54:28.363  INFO 14056 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-15 13:54:28.720  INFO 14056 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path '/Forum'
+2023-02-15 13:54:28.736  WARN 14056 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-15 13:54:28.754  INFO 14056 --- [main] com.example.pidev.PiDevApplication       : Started PiDevApplication in 3.9 seconds (JVM running for 4.594)
+2023-02-15 13:57:54.217  INFO 14056 --- [http-nio-0.0.0.0-8085-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/Forum]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-15 13:57:54.218  INFO 14056 --- [http-nio-0.0.0.0-8085-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-15 13:57:54.861  INFO 14056 --- [http-nio-0.0.0.0-8085-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 642 ms
+2023-02-15 14:03:16.045  INFO 14056 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-15 14:03:16.047  INFO 14056 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-02-15 14:03:16.053  INFO 14056 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-02-15 14:03:30.753  INFO 15356 --- [main] com.example.pidev.PiDevApplication       : Starting PiDevApplication using Java 1.8.0_121 on DESKTOP-P93RHII with PID 15356 (C:\Users\khalil\IdeaProjects\PiDev\target\classes started by khalil in C:\Users\khalil\IdeaProjects\PiDev)
+2023-02-15 14:03:30.755  INFO 15356 --- [main] com.example.pidev.PiDevApplication       : No active profile set, falling back to 1 default profile: "default"
+2023-02-15 14:03:31.475  INFO 15356 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-15 14:03:31.561  INFO 15356 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 3 JPA repository interfaces.
+2023-02-15 14:03:32.006  INFO 15356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2023-02-15 14:03:32.021  INFO 15356 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-15 14:03:32.021  INFO 15356 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-02-15 14:03:32.231  INFO 15356 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/Forum]  : Initializing Spring embedded WebApplicationContext
+2023-02-15 14:03:32.232  INFO 15356 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1430 ms
+2023-02-15 14:03:32.471  INFO 15356 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-15 14:03:32.504  INFO 15356 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-02-15 14:03:32.680  INFO 15356 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-15 14:03:32.841  INFO 15356 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-15 14:03:32.984  INFO 15356 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-02-15 14:03:32.996  INFO 15356 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2023-02-15 14:03:33.618  INFO 15356 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-15 14:03:33.630  INFO 15356 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-15 14:03:33.966  INFO 15356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path '/Forum'
+2023-02-15 14:03:33.983  WARN 15356 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-15 14:03:34.002  INFO 15356 --- [main] com.example.pidev.PiDevApplication       : Started PiDevApplication in 3.714 seconds (JVM running for 4.698)
+2023-02-15 14:03:58.868  INFO 15356 --- [http-nio-0.0.0.0-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/Forum]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-15 14:03:58.869  INFO 15356 --- [http-nio-0.0.0.0-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-15 14:03:59.569  INFO 15356 --- [http-nio-0.0.0.0-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 699 ms
+2023-02-15 23:05:47.395  WARN 15356 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=8h37m18s595ms727µs300ns).
