@@ -26,8 +26,10 @@ public class Event  implements Serializable {
     inverseJoinColumns = {@JoinColumn(name = "reservation_id")})
 
     private Set<ReservationEvent> reservationEvent = new HashSet<>();
+//Constructeur feragh
+    public Event (){
 
-
+     }
 //OneToOne with Location
 
     @OneToOne(fetch = FetchType.EAGER,

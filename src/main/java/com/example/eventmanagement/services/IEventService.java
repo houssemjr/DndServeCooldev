@@ -1,4 +1,4 @@
-package com.example.eventmanagement.services;
-
-public interface IEventService {
-}
+//package com.example.eventmanagement.services;
+//
+//public interface IEventService {
+//}

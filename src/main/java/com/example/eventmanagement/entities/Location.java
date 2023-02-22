@@ -2,6 +2,9 @@ package com.example.eventmanagement.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "location")
 public class Location implements Serializable {
@@ -10,16 +13,17 @@ public class Location implements Serializable {
     @Column(name = "id")
     private Long idSalle;
     private  int capacity;
-    private Boolean State;
+    private Boolean state;
     private int NumSalle;
 
 //OneToOne with Event
 
-    @OneToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name="event_id", nullable = false)
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="event_id")
     private Event event;
 
-
+    public Location() {
+    }
 
     public Long getIdSalle() {
         return idSalle;
@@ -38,11 +42,11 @@ public class Location implements Serializable {
     }
 
     public Boolean getState() {
-        return State;
+        return state;
     }
 
     public void setState(Boolean state) {
-        State = state;
+        this.state = state;
     }
 
     public int getNumSalle() {
@@ -52,4 +56,15 @@ public class Location implements Serializable {
     public void setNumSalle(int numSalle) {
         NumSalle = numSalle;
     }
+
+//    @Override
+//    public String toString() {
+//        return "Location{" +
+//                "idSalle=" + idSalle +
+//                ", capacity=" + capacity +
+//                ", state=" + state +
+//                ", NumSalle=" + NumSalle +
+//                ", event=" + event +
+//                '}';
+//    }
 }

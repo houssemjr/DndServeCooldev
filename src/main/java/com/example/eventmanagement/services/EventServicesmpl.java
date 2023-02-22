@@ -16,12 +16,15 @@ public class EventServicesmpl  {
         return repository.findAll();
     }
 
-    public Event updateEvent(Event event){
+    public Event updateEvent(Event event ){
         Event existingEvents = repository.findById(event.getIdEvent()).orElse(null);
         existingEvents.setDescription(event.getDescription());
         existingEvents.setNom(event.getNom());
         existingEvents.setDuration(event.getDuration());
         return repository.save(existingEvents);
+    }
 
+    public void  deleteEvent(Long id){
+         repository.deleteById(id);
     }
 }
