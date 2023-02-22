@@ -20,8 +20,8 @@ public class YoutubeServicesmpl {
 
 
 
-    public YoutubePub getRandom(YoutubePub youtube ){
+    public YoutubePub getRandom(){
 
-        return youtubeRepositoy.findRandom(youtube.getId());
+        return youtubeRepositoy.findRandom();
     }
 }

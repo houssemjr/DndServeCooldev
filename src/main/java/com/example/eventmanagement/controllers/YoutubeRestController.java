@@ -21,7 +21,8 @@ public class YoutubeRestController {
     }
 
     @GetMapping("/getVideos")
-    public YoutubePub getVideos(@RequestBody YoutubePub youtubePub){
-        return youtubeService.getRandom(youtubePub);
+    public YoutubePub getVideos(){
+
+        return youtubeService.getRandom();
     }
 }

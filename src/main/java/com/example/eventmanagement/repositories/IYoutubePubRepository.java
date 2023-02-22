@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface IYoutubePubRepository extends JpaRepository<YoutubePub, Long> {
     @Query(value = "SELECT * FROM youtube ORDER BY RAND () LIMIT 1", nativeQuery=true)
-        YoutubePub findRandom(Long id);
+        YoutubePub findRandom();
 }
