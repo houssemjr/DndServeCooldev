@@ -1,5 +1,8 @@
 package com.example.eventmanagement.entities;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -7,6 +10,8 @@ import java.util.Set;
 
 @Entity
 @Table(name="events")
+@Getter
+@Setter
 public class Event  implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,6 +21,8 @@ public class Event  implements Serializable {
     private String nom;
     private int duration;
 
+    @ManyToMany
+    private Set<User> users = new HashSet<>();
 
 //ManyToMany with ReservationEvent
     @ManyToMany(fetch=FetchType.EAGER, cascade = {

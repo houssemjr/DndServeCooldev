@@ -15,19 +15,25 @@ public class ReservationEvent implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idRes;
     @JsonFormat(pattern="yyyy-MM-dd")
-    private Date DateRes;
-    private int NbPerson;
+    private Date dateRes;
+    private int nbPerson;
+
+
+    public ReservationEvent(Date dateRes, int nbPerson) {
+        this.dateRes = dateRes;
+        this.nbPerson = nbPerson;
+    }
 
     public void setIdRes(Long idRes) {
         this.idRes = idRes;
     }
 
     public void setDateRes(Date dateRes) {
-        DateRes = dateRes;
+        this.dateRes = dateRes;
     }
 
     public void setNbPerson(int nbPerson) {
-        NbPerson = nbPerson;
+        this.nbPerson = nbPerson;
     }
 
     public Long getIdRes() {
@@ -35,11 +41,11 @@ public class ReservationEvent implements Serializable {
     }
 
     public Date getDateRes() {
-        return DateRes;
+        return dateRes;
     }
 
     public int getNbPerson() {
-        return NbPerson;
+        return nbPerson;
     }
 
     //ManyToMany withEvent

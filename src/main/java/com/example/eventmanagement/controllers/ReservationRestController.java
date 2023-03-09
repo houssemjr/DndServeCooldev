@@ -1,9 +1,16 @@
 package com.example.eventmanagement.controllers;
 
+import com.example.eventmanagement.dto.ReservationDto;
 import com.example.eventmanagement.entities.ReservationEvent;
+import com.example.eventmanagement.mappers.ReservationMappers;
+import com.example.eventmanagement.repositories.IReservationRepository;
 import com.example.eventmanagement.services.ReservationServicesmpl;
+import com.example.eventmanagement.utils.ResponseTransfer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class ReservationRestController {
@@ -11,11 +18,19 @@ public class ReservationRestController {
     private ReservationServicesmpl reservationService;
 
     @PostMapping("/addReservation")
-    public ReservationEvent addReservation(@RequestBody ReservationEvent reservation){
-       // System.out.println(reservation);
+    public ResponseTransfer addReservation(@RequestBody ReservationEvent reservation) {
+        Iterable<ReservationEvent> allReservations = getAllReservation();
+        for ( ReservationEvent reservationEvent : allReservations)
+        {
+            if (reservationEvent.getDateRes().compareTo(reservation.getDateRes()) == 0){
+                return  new ResponseTransfer(" Already Reserved",reservationEvent);
+            }
+        }
         return reservationService.addReservation(reservation);
 
     }
+
+
 
     @GetMapping("/getAllReservations")
     public Iterable<ReservationEvent>getAllReservation(){
@@ -36,4 +51,26 @@ public class ReservationRestController {
     public void deleteReservation(@PathVariable Long id){
         reservationService.deleteReservation(id);
     }
+
+
+    @PostMapping("/addReservationDto")
+    public ReservationDto add(@RequestBody ReservationDto entity){
+        return reservationService.add(entity, getAllReservation());
+    }
+
+   /* @GetMapping("/getAllReservationDto")
+    public List<ReservationDto>retrieveAll(){
+ return reservationService.getReservations();
+    }*/
+
+
 }
+
+
+
+
+
+
+
+
+
