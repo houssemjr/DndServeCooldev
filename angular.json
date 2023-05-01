@@ -27,9 +27,35 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/assets/css/lightbox.css",
+              "src/assets/css/owl.css",
+              "src/assets/css/fontawesome.css",
+              "src/assets/css/templatemo-grad-school.css",
+              "src/assets/css/flex-slider.css",
+              "node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css",
+"node_modules/admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css",
+"node_modules/admin-lte/dist/css/adminlte.min.css"
+
+
+
+
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+               "src/assets/js/isotope.min.js",
+              "src/assets/js/owl-carousel.js",
+              "src/assets/js/lightbox.js",
+              "src/assets/js/video.js",
+              "src/assets/js/tabs.js",
+              "src/assets/js/slick-slider.js",
+              "src/assets/js/custom.js"
+  
+ 
+
+            ]
           },
           "configurations": {
             "production": {
