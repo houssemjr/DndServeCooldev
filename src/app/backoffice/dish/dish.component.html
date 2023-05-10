@@ -9,25 +9,44 @@
       <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
         <div class="form-group">
           <label for="name">Dish Name :</label>
-          <input type="text" #name (ngModel)="Dish.nameDish" name="nameDish" id="name" class="form-control" placeholder="Dish Name">
+          <input type="text" #name="ngModel" (ngModel)="Dish.nameDish" name="nameDish" id="name" class="form-control" placeholder="Dish Name" required minlength="5">
+          <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+            <div *ngIf="name.errors?.['required']">Name is required</div>
+            <div *ngIf="name.errors?.['minlength']">Name must have at least 5 characters</div>
+        </div>
         </div>
         <div class="form-group">
           <label for="address">Dish Type  :</label>
-          <input type="text" #type (ngModel)="Dish.typeDish" name="typeDish" id="type" class="form-control"
-            placeholder="Dish Type">
+          
+          <select [(ngModel)]="Dish.typeDish" #type="ngModel" name="typeDish" id="typeDish" class="form-control" required>
+            <option value="Menu1">Menu1</option>
+            <option value="Menu2">Menu2</option>
+            </select>
+            <div class="alert alert-danger" *ngIf="type.touched && type.invalid">
+              <div *ngIf="type.errors?.['required']">Type is required</div>
+
+          </div>
+          
         </div>
         <div class="form-group">
           <label for="percentage">Dish Description:</label>
-          <input type="text" #description (ngModel)="Dish.description" name="description" id="description" class="form-control"
-            placeholder="Dish description">
+          <input type="text" #description="ngModel" (ngModel)="Dish.description" name="description" id="description" class="form-control"
+            placeholder="Dish description" required>
+            <div class="alert alert-danger" *ngIf="description.touched && description.invalid">
+              <div *ngIf="description.errors?.['required']">Description is required</div>
+
+          </div>
         </div>
         <div class="form-group">
             <label for="percentage">Dish Price :</label>
-            <input type="number" #price (ngModel)="Dish.priceDish" name="priceDish" id="price" class="form-control"
-              placeholder="Dish Price">
+            <input type="number" #price="ngModel" (ngModel)="Dish.priceDish" name="priceDish" id="price" class="form-control"
+              placeholder="Dish Price" required>
+              <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
+                <div *ngIf="price.errors?.['required']">Price is required</div>
+            </div>
           </div>
         <div class="form-group">
-          <input type="submit" value="Register" class="btn btn-primary w-100">
+          <input type="submit"[disabled]="registerForm.invalid" value="Register" class="btn btn-primary w-100">
         </div>
       </form>
     </div>
@@ -75,27 +94,49 @@
             </div>
             <div class="form-group">
               <label for="name">Dish Name :</label>
-              <input type="text" #nameDish [(ngModel)]="dishToUpdate.nameDish" name="nameDish" id="nameDish" class="form-control"
-                placeholder="Dish Name">
+              <input type="text" #nameDish="ngModel" [(ngModel)]="dishToUpdate.nameDish" name="nameDish" id="nameDish" class="form-control"
+                placeholder="Dish Name" required minlength="5">
+                <div class="alert alert-danger" *ngIf="nameDish.touched && nameDish.invalid">
+                  <div *ngIf="nameDish.errors?.['required']">Name is required</div>
+                  <div *ngIf="nameDish.errors?.['minlength']">Name must have at least 5 characters</div>
+              </div>
             </div>
             <div class="form-group">
               <label for="address">Type Dish :</label>
-              <input type="text" #typeDish [(ngModel)]="dishToUpdate.typeDish" name="typeDish" id="typeDish"
-                class="form-control" placeholder="Type Dish">
+              <select [(ngModel)]="dishToUpdate.typeDish" name="typeDish" id="typeDish" class="form-control" required>
+                <option value="Menu1">Menu1</option>
+                <option value="Menu2">Menu2</option>
+                <div class="alert alert-danger" *ngIf="description.touched && description.invalid">
+                  <div *ngIf="description.errors?.['required']">Description is required</div>
+                 
+              </div>
+              </select>
+              
             </div>
+            
+            
+            
             <div class="form-group">
               <label for="percentage">Dish description :</label>
-              <input type="text" #description [(ngModel)]="dishToUpdate.description" name="description" id="description"
-                class="form-control" placeholder="Dish Description">
+              <input type="text" #description="ngModel" [(ngModel)]="dishToUpdate.description" name="description" id="description"
+                class="form-control" placeholder="Dish Description" required>
+                <div class="alert alert-danger" *ngIf="description.touched && description.invalid">
+                  <div *ngIf="description.errors?.['required']">Description is required</div>
+                 
+              </div>
             </div>
             <div class="form-group">
                 <label for="percentage">Dish price :</label>
-                <input type="text" #priceDish [(ngModel)]="dishToUpdate.priceDish" name="priceDish" id="priceDish"
-                  class="form-control" placeholder="Dish Price">
+                <input type="text" #priceDish="ngModel" [(ngModel)]="dishToUpdate.priceDish" name="priceDish" id="priceDish"
+                  class="form-control" placeholder="Dish Price" required>
+                  <div class="alert alert-danger" *ngIf="priceDish.touched && priceDish.invalid">
+                    <div *ngIf="priceDish.errors?.['required']">Price is required</div>
+                   
+                </div>
               </div>
               <div class="form-group">
-                <input type="submit" value="Update"data-bs-dismiss="modal" class="btn btn-primary">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                <input type="submit" [disabled]="updateForm.invalid" value="Update"data-bs-dismiss="modal" class="btn btn-primary">
+                <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
               </div>
           </form>
         </div>

@@ -1,8 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": false
-  },
+ 
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -40,7 +38,8 @@
               "src/assets/css/flex-slider.css",
               "node_modules/admin-lte/plugins/fontawesome-free/css/all.min.css",
               "node_modules/admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css",
-              "node_modules/admin-lte/dist/css/adminlte.min.css"
+              "node_modules/admin-lte/dist/css/adminlte.min.css",
+              "node_modules/ngx-toastr/toastr.css" 
 
 
 
@@ -53,8 +52,9 @@
               "src/assets/js/video.js",
               "src/assets/js/tabs.js",
               "src/assets/js/slick-slider.js",
-             
-              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/apexcharts/dist/apexcharts.min.js",
+              "node_modules/apexcharts/dist/apexcharts.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
               
   
  
@@ -132,5 +132,7 @@
       }
     }
   },
-  "defaultProject": "templatefinal"
+  "cli": {
+    "analytics": "523c6dd4-fb83-4cb7-a266-be9a356a0fe0"
+  }
 }

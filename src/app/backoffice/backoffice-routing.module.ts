@@ -5,6 +5,8 @@ import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { DishComponent } from './dish/dish.component';
 import { TablesComponent } from './Tables/tables.component';
 import { OrderComponent } from './order/order.component';
+import { BarGraphComponent } from './bar-graph/bar-graph.component';
+import { ChartBarComponent } from '../chart-bar/chart-bar.component';
 
 
 
@@ -17,6 +19,10 @@ const routes: Routes = [
     {path:'',component:TablesComponent}
   ] },{ path: 'order', component: AdminLayoutComponent,children :[
     {path:'',component:OrderComponent}
+  ] },{ path: 'dash', component: AdminLayoutComponent,children :[
+    {path:'',component:BarGraphComponent}
+  ] },{ path: 'dashBar', component: AdminLayoutComponent,children :[
+    {path:'',component:ChartBarComponent}
   ] }
 
 

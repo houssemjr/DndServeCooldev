@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DishService } from '../dish.service';
 import { OrderService } from '../order.service';
 import { TableService } from '../table.service';
+import { Dishs } from '../dishs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dish-front',
@@ -26,7 +28,7 @@ export class DishFrontComponent implements OnInit {
   tables:any;
 
   
-  constructor(private dishService: DishService,private orderService:OrderService,private tableService:TableService) {
+  constructor(private dishService: DishService,private orderService:OrderService,private tableService:TableService,private tostar:ToastrService) {
     
     this.getDishDetails();
     
@@ -66,11 +68,27 @@ export class DishFrontComponent implements OnInit {
       (resp) => {
         console.log(resp);
         this.dishDetails = resp;
-        // Add NbCalorieParPlat to each dish object
-   
+        this.dishDetails.forEach((dish:Dishs) => {
+          this.getNbCal(dish.idDish); // Pass the dish ID as a parameter to getNbCal
+        });
+      
         
       },
       (err) => {
+        console.log(err);
+      }
+    );
+  }
+  getNbCal(iddish: number) {
+    this.dishService.getNbCalorieParPlat(iddish).subscribe(
+      (calories:number) => {
+        // Update the corresponding dish object with the calorie count
+        const dish = this.dishDetails.find((dish:Dishs) => dish.idDish=== iddish);
+        if (dish) {
+          dish.NbCalorieParPlat = calories; // Assuming the property name is "NbCalorieParPlat"
+        }
+      },
+      (err:any) => {
         console.log(err);
       }
     );
@@ -81,14 +99,18 @@ export class DishFrontComponent implements OnInit {
       (resp) => {
         console.log(resp);
         
-       
+       if(resp == true){
+        this.tostar.info("Resrve Success")
+       }
         // Add NbCalorieParPlat to each dish object
-   
+     
+        else{
+          this.tostar.error("Saturated table reserved in another table")
+        }
+
         
       },
-      (err) => {
-        console.log(err);
-      }
+     
     );
     
   }

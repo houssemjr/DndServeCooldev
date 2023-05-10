@@ -34,5 +34,21 @@ export class DishService {
     return this.http.delete(this.url+'/delete/'+id);
   }
 
+  getBarGraphData() {
+    this.http.get<any>(this.url+'/displayBarGraph');
+  }
+  getPieChartData(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:9090/Cool/pie-chart');
+  }
+  getMenu1(): any{
+    return this.http.get<any[]>(this.url+'/countMenu1');
+  }
+  getMenu2():any{
+    return this.http.get<any[]>(this.url+'/countMenu2');
+  }
+  getNbCalorieParPlat(id:number):any{
+    return this.http.get<any[]>(this.url+'/getNbCalorie/'+id);
+  }
+
  
 }

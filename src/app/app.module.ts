@@ -13,6 +13,8 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+
 import { DishComponent } from './backoffice/dish/dish.component';
 import { FormsModule } from '@angular/forms';
 import { TablesComponent } from './backoffice/Tables/tables.component';
@@ -30,6 +32,10 @@ import { InterComponent } from './inter/inter.component';
 import { AllusersComponent } from './allusers/allusers.component';
 import { KeycloakAngularModule,KeycloakService } from 'keycloak-angular';
 
+import { BarGraphComponent } from './backoffice/bar-graph/bar-graph.component';
+import { PanierComponent } from './panier/panier.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -56,25 +62,23 @@ import { KeycloakAngularModule,KeycloakService } from 'keycloak-angular';
     HdComponent,
     InterComponent,
     AllusersComponent,
+    BarGraphComponent,
+    PanierComponent,
+
    
     
   ],
   imports: [
     BrowserModule,
-    OAuthModule.forRoot(),
     AppRoutingModule,
     BrowserAnimationsModule,
      FormsModule,
      HttpClientModule,
      KeycloakAngularModule,
+     NgApexchartsModule,
+     ToastrModule.forRoot()
      
-     
-     
-     
-     
-    
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+   
+]
 })
 export class AppModule { }

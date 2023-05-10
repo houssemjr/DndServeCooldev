@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DishService } from '../../dish.service';
 import { NgForm } from '@angular/forms';
+import { DishType } from 'src/app/DishType';
+
 
 @Component({
   selector: 'app-dish',
@@ -10,7 +12,8 @@ import { NgForm } from '@angular/forms';
 export class DishComponent implements OnInit {
 
   
-  
+
+
   title = 'DishDashboard';
   id:any;
   Dish:any;
@@ -22,6 +25,7 @@ export class DishComponent implements OnInit {
     this.getDishDetails();
     
   }
+  typeDish!:DishType;
   
   ngOnInit(): void {
     this.Dish = {
@@ -104,6 +108,7 @@ export class DishComponent implements OnInit {
     this.dishService.updateDish(this.dishToUpdate).subscribe(
       (resp) => {
         console.log(resp);
+      
       },
       (err) => {
         console.log(err);

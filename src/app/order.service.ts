@@ -15,8 +15,8 @@ export class OrderService {
     return this.http.get<Orders[]>(this.url+'/getAll');
   }
 
-  createEmployee(order: Orders,idTables:any,idDishs:any): Observable<Object>{
-    return this.http.post(this.url+"/add/"+idTables+"/"+idDishs, order);
+  createEmployee(order: Orders,idTables:any,idDishs:any): Observable<boolean>{
+    return this.http.post<boolean>(this.url+"/add/"+idTables+"/"+idDishs, order);
   }
 
  
@@ -29,5 +29,9 @@ export class OrderService {
 
   deleteDish(id: number): Observable<Object>{
     return this.http.delete(this.url+'/delete/'+id);
+  }
+  getOrderByIdUser(id:number){
+    return this.http.get(this.url+'/getOrder/'+id);
+
   }
 }

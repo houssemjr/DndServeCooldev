@@ -1,4 +1,3 @@
-
 <app-header></app-header>
 <section class="section main-banner" id="top" data-section="section1">
     <video autoplay muted loop id="bg-video">
@@ -9,23 +8,29 @@
         <div class="caption">
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div class="col" *ngFor="let dish of dishDetails"> 
-            <div class="card" style="width: 25rem;height: 12rem;" >
-                
+            <div class="card" style="width: 25rem;height: 18rem;" >
                 <div class="card-body">
-                    
                   <h5 class="card-title">{{dish.typeDish}}</h5>
-                  <h5 class="card-text">{{dish.description}}</h5>
-                  <h5  class="card-text">Price: {{dish.priceDish}}</h5>
-                  <div class="main-button">
-                    <div class="scroll-to-section">
-                    <button href="#"class="orange-btn" style="margin-bottom: 8px;" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="RecupereDish(dish.idDish)">Reserve</button></div>
+                 
                 </div>
-            </div>
+                 <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Description: {{dish.description}}</li>
+                    <li class="list-group-item">Price: {{dish.priceDish}}</li>
+                    <li class="list-group-item">Calories: {{ dish.NbCalorieParPlat }}</li>
+                  </ul>
+                  <div class="card-body">
+                  <div class="button-container">
+                   <button href="#"class="orange-btn button" style="margin-bottom: 50px;" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="RecupereDish(dish.idDish)">Reserve</button>
+                  <button href="#"class="orange-btn button" style="margin-bottom: 50px;">Check Compatibility</button>
+                </div>
+                </div>
+           
         </div>
+    </div>
     </div>
             </div>
             </div>
-            </div>
+        
               
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">

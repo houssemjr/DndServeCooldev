@@ -15,6 +15,7 @@
           <li><a routerLink="#section3" (click)="scrollTo('section3')">Event</a></li>
        
 
+         
         </ul>
       </li>
       <li><a routerLink="/forum">Forum</a></li>
@@ -26,6 +27,8 @@
       <li><a role="button"  *ngIf="!token" class="nav-item nav-link" (click)="login()">Login</a></li>
       <li *ngIf="token" class ="sah"> welcome {{token.name}} !</li>
       <li> <a role="button" *ngIf="token" class="nav-item nav-link" (click)="logout()">Logout</a></li>
+      <li><a routerLink="" (click)="scrollTo('section3')">Donate</a></li>
+      <li> <img class="yy"src="../../assets/images/iconPanier.png" role="button" routerLink="/panier"></li>
       
     </ul>
   </nav>

@@ -7,22 +7,18 @@
       
         <div class="card mt-5" style="padding: 20px;">
           <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
-            <div class="form-group">
-              <label for="address">Table </label>
-              <input type="text" #type (ngModel)="Table.numTable" name="numTable" id="num" class="form-control"
-                placeholder="Num table">
-            </div>
+          
             <div class="form-group">
               <label for="name">capacity :</label>
-              <input type="number" #name (ngModel)="Table.capacity" name="capacity" id="capacity" class="form-control" placeholder="Capacity">
+              <input type="number" #capacity="ngModel" (ngModel)="Table.capacity" name="capacity" id="capacity" class="form-control" placeholder="Capacity" required>
+              <div class="alert alert-danger" *ngIf="capacity.touched && capacity.invalid">
+                <div *ngIf="capacity.errors?.['required']">Capacity is required</div>
+               
             </div>
-            <div class="form-group">
-              <label for="percentage">State</label>
-              <input type="text" #description (ngModel)="Table.state" name="state" id="state" class="form-control"
-                placeholder="State">
             </div>
+          
             <div class="form-group">
-              <input type="submit" value="Register" class="btn btn-primary w-100">
+              <input type="submit" [disabled]="registerForm.invalid"value="Register" class="btn btn-primary w-100">
             </div>
           </form>
         </div>
@@ -65,24 +61,16 @@
               <form #updateForm="ngForm" (ngSubmit)="updateDish()">
                 <div class="form-group">
                   <label for="idDish">Table number :</label>
-                  <input type="text" disabled #idDish [(ngModel)]="tableToUpdate.id" name="idTable" id="idTable"
+                  <input type="text" disabled #idDish [(ngModel)]="tableToUpdate.numTable" name="idTable" id="idTable"
                     class="form-control" placeholder="Table number">
                 </div>
-                <div class="form-group">
-                  <label for="address">Num Table :</label>
-                  <input type="text" #typeDish [(ngModel)]="tableToUpdate.numTable" name="numTable" id="numTable"
-                    class="form-control" placeholder="Num table">
-                </div>
+             
                 <div class="form-group">
                   <label for="name">Capacity :</label>
                   <input type="text" #nameDish [(ngModel)]="tableToUpdate.capacity" name="nameDish" id="nameDish" class="form-control"
                     placeholder="Capacity">
                 </div>
-                <div class="form-group">
-                  <label for="address">State :</label>
-                  <input type="text" #typeDish [(ngModel)]="tableToUpdate.state" name="state" id="state"
-                    class="form-control" placeholder="State">
-                </div>
+              
                   <div class="form-group">
                     <input type="submit" value="Update"data-bs-dismiss="modal" class="btn btn-primary">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
