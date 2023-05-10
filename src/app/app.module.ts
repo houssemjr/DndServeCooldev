@@ -22,7 +22,9 @@ import { DishFrontComponent } from './dish-front/dish-front.component';
 import { ForumComponent } from './forum/forum.component';
 import { DonnateComponent } from './donnate/donnate.component';
 import { ReserveComponent } from './reserve/reserve.component';
-
+import { DisplayEventComponent } from './display-event/display-event.component';
+import { DialogComponent } from './dialog/dialog.component';
+  
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { ReserveComponent } from './reserve/reserve.component';
     ForumComponent,
     DonnateComponent,
     ReserveComponent,
+    DisplayEventComponent,
+    DialogComponent,
    
     
   ],

@@ -6,6 +6,7 @@ import { DishComponent } from './backoffice/dish/dish.component';
 import { DishFrontComponent } from './dish-front/dish-front.component';
 import { ForumComponent } from './forum/forum.component';
 import { DonnateComponent } from './donnate/donnate.component';
+import { DisplayEventComponent } from './display-event/display-event.component';
 
 const routes: Routes = [   
  { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
 { path: 'dishFront', component: DishFrontComponent },
 { path: 'forum', component: ForumComponent },
 { path: 'donnate', component: DonnateComponent },
+{ path: 'listevent', component: DisplayEventComponent },
 { path: 'admin', loadChildren: () => import('./backoffice/backoffice.module').then(m => m.BackofficeModule) }
 ];
 

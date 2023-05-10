@@ -5,6 +5,9 @@ import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { DishComponent } from './dish/dish.component';
 import { TablesComponent } from './Tables/tables.component';
 import { OrderComponent } from './order/order.component';
+import { EventsComponent } from './events/events.component';
+import { LocationsComponent } from './locations/locations.component';
+import { ReservationsComponent } from './reservations/reservations.component';
 
 
 
@@ -17,9 +20,16 @@ const routes: Routes = [
     {path:'',component:TablesComponent}
   ] },{ path: 'order', component: AdminLayoutComponent,children :[
     {path:'',component:OrderComponent}
+  ] },{ path: 'events', component: AdminLayoutComponent,children :[
+    {path:'',component:EventsComponent}
+  ] },{ path: 'locations', component: AdminLayoutComponent,children :[
+    {path:'',component:LocationsComponent}
+  ] },{ path: 'reservations', component: AdminLayoutComponent,children :[
+    {path:'',component:ReservationsComponent}
   ] }
+  
 
-
+  
 ];
 
 @NgModule({
