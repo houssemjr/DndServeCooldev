@@ -1,0 +1,132 @@
+
+<div class="class-area-container">
+    <div class="container">
+        <div class="card mt-5" style="align-items: center;">
+          <h1>order Dashboard</h1>
+        </div>
+        <div class="card mt-5" style="padding: 20px;">
+            <form #registerForm="ngForm" >
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" class="form-control" name="dateOrder"   #dateOrder="ngModel"  [(ngModel)] = "Order.dateOrder">
+                    </div>
+                 
+                    <div class="form-group">
+                        <label>place number</label>
+                        <input type="number" class="form-control" name="nbPlace" #nbPlace="ngModel" [(ngModel)]="Order.nbPlace">
+                    </div>
+                    <div class="form-group">
+                        <label>State</label>
+                        <input type="text" class="form-control" name="status" #status="ngModel" [(ngModel)]="Order.status">
+                    </div>
+                    <div class="form-group">
+                        <label>id Table</label>
+                       <select class="form-control" id="exampleFormControlSelect1" name="id1"  #id1="ngModel" [(ngModel)]="idTable" >
+                            <option *ngFor="let e of tables" value="{{e.idTable}}">{{e.idTable}}</option>
+                          </select>
+                    </div>
+                    <div class="form-group">
+                        <label>id Dishs</label>
+                       <select class="form-control" id="exampleFormControlSelect1" name="id2"  #id2="ngModel" [(ngModel)]="idDish" >
+                            <option *ngFor="let e of dishs" value="{{e.idDish}}">{{e.idDish}}</option>
+                          </select>
+                    </div>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-info btn-fill pull-right" (click) = "addOrder()">Ajouter offer</button>
+                  </div>
+                </form>
+              </div>
+{{idTable}}
+{{idDish}}
+{{Order.dateOrder}}
+{{Order.status}}
+{{Order.nbPlace}}
+
+        <div class="mt-5">
+          <table class="table table-bordered">
+            <thead>
+                <tr>
+                   <th>#</th>
+                    <th>Place number</th>
+                    <th>State</th>
+                    <th>Table</th>
+                   
+                </tr>
+            </thead>
+            <tbody class="tbody">
+              <tr *ngFor="let order of orderDetails">
+                <td>{{order.idOrders}}</td>
+                <td>{{order.nbPlace}}</td>
+                <td>{{order.status}}</td>
+                <td>{{order.tables.numTable}}</td>
+             
+                <td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="edit(order)">update</button></td>
+                <td><button type="button" class="btn btn-danger" (click)="deleteOrder(order.idOrders)">Delete</button></td>
+                
+        
+    <!-- Button trigger modal -->
+          
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+<!--Update Dish-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Titre de la modale</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+        </div>
+        <div class="modal-body">
+          <form #updateForm="ngForm" (ngSubmit)="updateDish()">
+            <div class="form-group">
+              <label for="idOrder">Order number :</label>
+              <input type="text" disabled #idOrders [(ngModel)]="orderToUpdate.idOrders" name="idOrders" id="idOrders"
+                class="form-control" placeholder="Order number">
+            </div>
+            <div class="form-group">
+              <label for="name">Place number :</label>
+              <input type="text" #nbPlace [(ngModel)]="orderToUpdate.nbPlace" name="nbPlace" id="nbPlace" class="form-control"
+                placeholder="Place number">
+                {{orderToUpdate.idOrder}}
+            </div>
+            <div class="form-group">
+              <label for="address">State:</label>
+              <input type="text" #status [(ngModel)]="orderToUpdate.status" name="status" id="status"
+                class="form-control" placeholder="State">
+            </div>
+          
+              <div class="form-group">
+                <input type="submit" value="Update"data-bs-dismiss="modal" class="btn btn-primary">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+              </div>
+          </form>
+        </div>
+       
+    </div>
+  </div>
+
+<!--Nombre de calorie 
+<div class="modal fade" id="exampleModal1" tabindex="-1"  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     
+      <div class="modal-body">
+        Contenu de la deuxième modal
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>  -->
+</div>
+
+      
+ 
