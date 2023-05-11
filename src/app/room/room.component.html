@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="card mt-5" style="align-items: center;">
+      <h1>Rooms Dashboard</h1>
+    </div>
+
+    <div class="card mt-5" style="padding: 20px;">
+        <form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+          <div class="form-group">
+            <label for="capacity">capacity :</label>
+            <input type="text"  (ngModel)="roomRequest.capacity" name="capacity"  class="form-control" placeholder="capacity">
+          </div>
+
+          <div class="form-group">
+            <label for="placeDispo">Places Disponibles  :</label>
+            <input type="text"  (ngModel)="roomRequest.placeDispo" name="placeDispo" class="form-control"
+              placeholder="placeDispo">
+          </div>
+          
+          <div class="form-group">
+            <label for="state">State :</label>
+            <select name="state" [(ngModel)]="roomRequest.state" required>
+                <option value="0">Full</option>
+                <option value="1">Empty</option>
+              </select>
+          </div>
+          
+          <div class="form-group">
+            <input type="submit" value="Register" class="btn btn-primary w-100">
+          </div>
+        </form>
+      </div>
+  
+
+<div class="mt-5">
+    <table class="table table-bordered">
+      <thead>
+          <tr>
+            <th>Room ID</th>
+            <th>Capacity</th>
+            <th>Places Disponibles</th>
+            <th>State</th>
+          </tr>
+      </thead>
+      <tbody class="tbody">
+        <tr *ngFor="let room of rooms">
+            <td>{{room.idRoom}}</td>
+            <td>{{room.capacity}}</td>
+            <td>{{room.placeDispo}}</td>
+            <td>{{room.state}}</td>
+<!-- Button trigger modal -->
+<!--<td><button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="edit(dish)">update</button></td>
+<td> <button type="button" class="btn btn-info" >Details</button></td>-->
+          <td><button type="button" class="btn btn-danger" (click)="deleteRoom(room.idRoom)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
